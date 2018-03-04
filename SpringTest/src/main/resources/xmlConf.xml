@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.yek.xmlhello.HelloWorld" id="helloWorld">
+        <property name="username" value="Spring"></property>
+    </bean>
+
+    <bean class="com.yek.xmlhello.service.MesServiceImpl" id="service" />
+
+    <bean class="com.yek.xmlhello.service.MesPrinter" id="printer">
+        <property name="service" ref="service"></property>
+    </bean>
+
+    <bean class="com.yek.xmlhello.car.Car" id="car" scope="singleton">
+        <constructor-arg name="price" value="30.3030"/>
+        <constructor-arg name="brand" value="Ford"/>
+    </bean>
+</beans>
